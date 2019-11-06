@@ -1,0 +1,33 @@
+.header{
+  text-align:center;
+  font-size: 250%;
+  margin-left:39%;
+}
+.user{
+  margin-left: 33%;
+}
+mat-icon{
+  font-size: 270%;
+}
+h1{
+  padding:2% 5%;
+}
+.row{
+  margin-left: 10%;
+  margin-top: 2%;
+}
+@media only screen and (max-width: 951px) {
+  .user {
+    margin-left: 25%;
+  }
+}
+@media only screen and (max-width: 660px) {
+  .user {
+    margin-left: 10%;
+  }
+}
+@media only screen and (max-width: 510px) {
+  .user {
+    margin-left: 5%;
+  }
+}

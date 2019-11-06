@@ -1,0 +1,118 @@
+*{
+        margin-top: 0;
+
+}
+@mixin basic {
+        color:  #fff;
+        text-transform: uppercase;
+        position: relative;    
+}
+$color-primary:red;
+h3{
+    @include basic;
+    margin-left: 36%;
+    margin-top: -68px;
+    font-size: 15px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    animation-name: moveInRight;
+   animation-duration:4s;
+   backface-visibility:hidden;
+}
+.header{
+        background-image: linear-gradient(to right,(rgba(45, 212, 45, 0.2)),rgba(120,0,2,.3)), url('../../assets/resume1.png');
+        height: 95vh;
+        background-size: cover;
+}
+.main{
+   font-size: 100px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: white;
+   padding-top: 20px;
+   padding-left:25%;
+   animation-name: moveInLeft;
+   animation-duration:4s;
+   backface-visibility: hidden;
+
+}
+@keyframes moveInLeft{
+  0%{
+       opacity: .2;
+       transform: translateX(-100px);   
+  }
+  70%{
+          transform: translateX(20px);
+  }
+  100%{
+          opacity:1;
+  }
+}
+@keyframes moveInRight{
+        0%{
+             opacity: .2;
+             transform: translateX(100px);   
+        }
+        70%{
+                transform: translateX(-20px);
+        }
+        100%{
+                opacity:1;
+        }
+      }
+.sub-main:hover{
+   transform: translateY(-3px);    
+   translate: all .3s; 
+   box-shadow: 0 10px 5px rgba(0,120,0,.2)
+            
+}
+.sub-main{
+& :link{
+        text-decoration: none;
+}
+
+&:active{
+        transform: translateY(1px);
+}
+        @include basic;
+        padding:15px 40px;
+        margin-top: 20%;
+        margin-left: 42%;
+        font-size: 20px;
+        letter-spacing: 2px;
+        display:inline-block;
+        text-align: center;
+        background-color: white;
+        color:#777;
+        border-radius: 125px;
+        text-decoration: none;
+}
+@media only screen and (max-width:880px) {
+.main{
+font-size: 60px;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   color: white;
+   padding-top: 25px;
+   padding-left:25%;
+   animation-name: moveInLeft;
+   animation-duration:4s;
+   backface-visibility: hidden;
+}
+h3{
+        @include basic;
+    margin-left: 36%;
+    margin-top: -2.2%;
+    font-size: 15px;
+    letter-spacing: 2px;
+    word-spacing: 4px;
+    animation-name: moveInRight;
+   animation-duration:4s;
+   backface-visibility:hidden;
+
+}
+.header{
+        background-image: linear-gradient(to right,(rgba(45, 212, 45, 0.2)),rgba(120,0,2,.3)), url('../../assets/resume1.png');
+        width:100%;
+        height:600px;
+        background-size: cover;
+}
+      }

@@ -1,0 +1,105 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<mat-toolbar color="primary"><h1 class="header" >Resume</h1>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="user">
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+     <button mat-menu-item>
+      <span>Login</span>
+    </button>
+    <button mat-menu-item>
+      <span>Logout</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+<div><h1>Basic Details:</h1></div>
+<form class="example-form">
+  <div class="row">
+      <span class="col-md-4">
+      <mat-form-field class="example-full-width">
+       <input matInput placeholder="First Name" [formControl]="fname" minLength="3"required>
+       <mat-error *ngIf="fname.invalid">{{ErrorMessage()}}</mat-error>
+      </mat-form-field>
+    </span>
+  <span class="col-md-4">   
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Middle Name">
+    </mat-form-field>
+  </span> 
+  <div class="col-md-4">  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Last Name">
+    </mat-form-field>
+  </div>
+</div>
+<div class="row">
+    <div class="col-md-4">  
+        <mat-form-field class="example-full-width">
+          <input matInput  type="" placeholder="Mobile No" required maxlength="10" minlength="10" [formControl]="mobileno" >
+          <mat-error *ngIf="mobileno.invalid">{{mobileMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">  
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email Id" [formControl]="email" required >
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="col-md-4">  
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Linked In">
+        </mat-form-field>
+    </div>  
+</div>
+<div class="row">
+  <div class="col-md-5">
+    <mat-form-field>
+      <mat-select placeholder="Country">
+        <mat-option value="option">Afghanistan</mat-option>
+        <mat-option value="option">America</mat-option>
+        <mat-option value="option">India</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div class="education"><h1>Education Qualification</h1></div>
+<div class="row">
+  <div class="col-md-3">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="University/Institute">   
+          <mat-option *ngFor="let option of options" [value]="option">
+            {{option}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> 
+  </div>
+  <div class="col-md-3">
+      <mat-form-field class="example-full-width">
+        <mat-select placeholder="Standard">   
+          <mat-option *ngFor="let standard of standerds" [value]="standard">
+            {{standard}}
+          </mat-option>
+        </mat-select>
+    </mat-form-field> 
+  </div>
+      <div class="col-md-3">  
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Percentage/SGPA">
+          </mat-form-field>
+      </div> 
+      <div class="col-md-2">  
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Year of passing">
+          </mat-form-field>
+      </div>    
+        <div class="col-md-1">
+          <button mat-button (click)="amit()">Add</button>
+        </div>
+  </div>
+  <div class="row">
+    
+  </div>
+  <!-- <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Leave a comment"></textarea>
+  </mat-form-field> -->
+</form>
