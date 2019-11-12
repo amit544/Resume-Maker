@@ -12,94 +12,278 @@
     </button>
   </mat-menu>
 </mat-toolbar>
-<div><h1>Basic Details:</h1></div>
-<form class="example-form">
-  <div class="row">
-      <span class="col-md-4">
-      <mat-form-field class="example-full-width">
-       <input matInput placeholder="First Name" [formControl]="fname" minLength="3"required>
-       <mat-error *ngIf="fname.invalid">{{ErrorMessage()}}</mat-error>
-      </mat-form-field>
-    </span>
-  <span class="col-md-4">   
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Middle Name">
-    </mat-form-field>
-  </span> 
-  <div class="col-md-4">  
-    <mat-form-field class="example-full-width">
-      <input matInput placeholder="Last Name">
-    </mat-form-field>
-  </div>
-</div>
-<div class="row">
-    <div class="col-md-4">  
-        <mat-form-field class="example-full-width">
-          <input matInput  type="" placeholder="Mobile No" required maxlength="10" minlength="10" [formControl]="mobileno" >
-          <mat-error *ngIf="mobileno.invalid">{{mobileMessage()}}</mat-error>
-        </mat-form-field>
-    </div>
-    <div class="col-md-4">  
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Email Id" [formControl]="email" required >
-          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-        </mat-form-field>
-    </div>
-    <div class="col-md-4">  
-        <mat-form-field class="example-full-width">
-          <input matInput placeholder="Linked In">
-        </mat-form-field>
-    </div>  
-</div>
-<div class="row">
-  <div class="col-md-5">
-    <mat-form-field>
-      <mat-select placeholder="Country">
-        <mat-option value="option">Afghanistan</mat-option>
-        <mat-option value="option">America</mat-option>
-        <mat-option value="option">India</mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-</div>
-<div class="education"><h1>Education Qualification</h1></div>
-<div class="row">
-  <div class="col-md-3">
-      <mat-form-field class="example-full-width">
-        <mat-select placeholder="University/Institute">   
-          <mat-option *ngFor="let option of options" [value]="option">
-            {{option}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field> 
-  </div>
-  <div class="col-md-3">
-      <mat-form-field class="example-full-width">
-        <mat-select placeholder="Standard">   
-          <mat-option *ngFor="let standard of standerds" [value]="standard">
-            {{standard}}
-          </mat-option>
-        </mat-select>
-    </mat-form-field> 
-  </div>
-      <div class="col-md-3">  
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Percentage/SGPA">
-          </mat-form-field>
-      </div> 
-      <div class="col-md-2">  
-          <mat-form-field class="example-full-width">
-            <input matInput placeholder="Year of passing">
-          </mat-form-field>
-      </div>    
-        <div class="col-md-1">
-          <button mat-button (click)="amit()">Add</button>
+<mat-card>
+  <mat-card-content>
+    <form class="example-form card w-75 mx-auto">
+      <div style="text-align: center;padding-top: 10px;"><h3>Personal Details:</h3></div>
+          <div class="row">
+              <span class="col-md-4">
+              <mat-form-field class="example-full-width">
+               <input matInput placeholder="First Name" [(ngModel)]="name" name="fname" minLength="3"required>
+               <mat-error *ngIf="fname.invalid">{{ErrorMessage()}}</mat-error>
+              </mat-form-field>
+            </span>
+          <span class="col-md-4">   
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Middle Name" [(ngModel)]="mname" name="mname">
+            </mat-form-field>
+          </span> 
+          <div class="col-md-4">  
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Last Name" [(ngModel)]="lname" name="lname"> 
+            </mat-form-field>
+          </div>
         </div>
+        <div class="row">
+            <div class="col-md-4">  
+                <mat-form-field class="example-full-width">
+                  <input matInput  type="" placeholder="Mobile No" required maxlength="10" minlength="10"[(ngModel)]="mobile" name="mobile">
+                  <mat-error *ngIf="mobileno.invalid">{{mobileMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">  
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Email Id" name="email" [(ngModel)]="emailid" required>
+                  <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">  
+                <mat-form-field class="example-full-width">
+                  <input matInput placeholder="Linked In" name="linkedin" [(ngModel)]="linkedin">
+                </mat-form-field>
+            </div>  
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+            <mat-form-field>
+              <mat-select placeholder="Country" name="Country" [(ngModel)]="Country">
+                <mat-option value="Afghanistan">Afghanistan</mat-option>
+                <mat-option value="America">America</mat-option>
+                <mat-option value="India">India</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="education" style="text-align: center;padding-top: 10px;"><h3>Education Qualification:</h3></div>
+        <div class="row">
+          <div class="col-md-3">
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="University/Institute" [(ngModel)]="University" name="University">   
+                  <mat-option *ngFor="let option of options" [value]=option  >
+                    {{option}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field> 
+          </div>
+          <div class="col-md-3">
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="Standard" [(ngModel)]="standard" name="standard">   
+                  <mat-option *ngFor="let standard of standerds" [value]="standard">
+                    {{standard}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field> 
+          </div>
+          <div class="col-md-3">  
+            <mat-form-field class="example-full-width" >
+                <input matInput placeholder="Percentage/SGPA" [(ngModel)]="percentage"  name="Percentage">
+            </mat-form-field>
+        </div> 
+            <div class="col-md-2">  
+                  <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Year of passing" [(ngModel)]="yearofpassing" name="yearofpassing">
+                  </mat-form-field>
+              </div>
+        </div>          
+        <div class="row">
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width">
+                    <mat-select placeholder="University/Institute" [(ngModel)]="University1" name="University1">   
+                      <mat-option *ngFor="let option of options" [value]="option">
+                          {{option}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field> 
+            </div>
+            <div class="col-md-3">
+                <mat-form-field class="example-full-width">
+                    <mat-select placeholder="Standard"[(ngModel)]="standard1" name="standard1">   
+                      <mat-option *ngFor="let standard of standerds" [value]="standard">
+                          {{standard}}
+                        </mat-option>
+                      </mat-select>
+                  </mat-form-field> 
+            </div>
+            <div class="col-md-3">  
+                <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Percentage/SGPA"[(ngModel)]="percentage1"  name="Percentage1">
+                        </mat-form-field>
+            </div> 
+            <div class="col-md-2">  
+                  <mat-form-field class="example-full-width">
+                     <input matInput placeholder="Year of passing" [(ngModel)]="yearofpassing1" name="yearofpassing1">
+                        </mat-form-field>
+            </div>          
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+              <mat-form-field class="example-full-width">
+                <mat-select placeholder="University/Institute"[(ngModel)]="University2" name="University2">   
+                    <mat-option *ngFor="let option of options" [value]="option">
+                        {{option}}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field> 
+            </div>
+            <div class="col-md-3">
+                  <mat-form-field class="example-full-width">
+                    <mat-select placeholder="Standard"[(ngModel)]="standard2" name="standard2">   
+                      <mat-option *ngFor="let standard of standerds" [value]="standard">
+                        {{standard}}
+                      </mat-option>
+                    </mat-select>
+                </mat-form-field> 
+           </div>
+           <div class="col-md-3">  
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Percentage/SGPA"[(ngModel)]="percentage2"  name="Percentage2">
+                      </mat-form-field>
+           </div> 
+           <div class="col-md-2">  
+                      <mat-form-field class="example-full-width">
+                        <input matInput placeholder="Year of passing" [(ngModel)]="yearofpassing2" name="yearofpassing2">
+                      </mat-form-field>
+                  </div>      
+        </div>
+        <h3 style="text-align: center;padding-top: 10px;">Skills:</h3>
+        <div class="row">
+            <mat-form-field class="example-chip-list">
+                <mat-chip-list #chipList aria-label="Fruit selection" name="technicalskill" [(ngModel)]="technicalskill">
+                  <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                           [removable]="removable" (removed)="remove(fruit)">
+                    {{fruit}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input placeholder="Technical Skill..."
+                         [matChipInputFor]="chipList"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+              </mat-form-field>
+        </div> 
+        <div class="row">
+            <div class="col-md-8">
+            <mat-form-field class="example">
+                <input matInput  maxlength="256" placeholder="Certificates"[(ngModel)]="Certificate" name="Certificates">
+              </mat-form-field>
+          </div>
+          <div class="col-md-4">
+              <mat-form-field class="example1">
+                  <input matInput  maxlength="256" placeholder="Year of Certificates"[(ngModel)]="yearofcertificate" name="yearofcertificate">
+                </mat-form-field>
+            </div>
+      </div>
+      <div class="row">
+          <div class="col-md-8">
+          <mat-form-field class="example">
+              <input matInput  maxlength="256" placeholder="Certificates"[(ngModel)]="Certificate1" name="Certificates1">
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field class="example1">
+                <input matInput  maxlength="256" placeholder="Year of Certificates"[(ngModel)]="yearofcertificate1" name="yearofcertificate">
+              </mat-form-field>
+          </div>
+    </div>
+    <div class="row">
+        <span class="col-md-4">
+        <mat-form-field class="example-full-width">
+         <input matInput placeholder="Hobbies1" [(ngModel)]="hobbies1" name="hobbies1">
+        </mat-form-field>
+      </span>
+    <span class="col-md-4">   
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Hobbies2" [(ngModel)]="hobbies2" name="hobbies2">
+      </mat-form-field>
+    </span> 
+    <div class="col-md-4">  
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Hobbies3" [(ngModel)]="hobbies3" name="hobbies3"> 
+      </mat-form-field>
+    </div>
   </div>
   <div class="row">
-    
-  </div>
-  <!-- <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field> -->
-</form>
+      <mat-accordion class="header1">
+          <mat-expansion-panel id="header2">
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                Working Experieence
+              </mat-panel-title>
+              <mat-panel-description>
+                Type your Experience Details
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+        
+            <mat-form-field class="col-md-3">
+              <input matInput placeholder="Company Name"[(ngModel)]="Company1" name="Company1">
+            </mat-form-field>
+            <mat-form-field class="col-md-3">
+              <input matInput placeholder="Post" [(ngModel)]="Post1" name="Post1">
+            </mat-form-field>
+            <mat-form-field class="col-md-6">
+                <input matInput placeholder="Description" [(ngModel)]="Description1" name="Description1">
+              </mat-form-field >
+          </mat-expansion-panel>
+        </mat-accordion>
+</div>
+<div class="row">
+    <mat-accordion class="header1">
+        <mat-expansion-panel id="header2">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Working Experieence
+            </mat-panel-title>
+            <mat-panel-description>
+              Type your Experience Details
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+      
+          <mat-form-field class="col-md-3">
+            <input matInput placeholder="Company Name"[(ngModel)]="Company2" name="Company2">
+          </mat-form-field>
+          <mat-form-field class="col-md-3">
+            <input matInput placeholder="Post" [(ngModel)]="Post2" name="Post2">
+          </mat-form-field>
+          <mat-form-field class="col-md-6">
+              <input matInput placeholder="Description" [(ngModel)]="Description2" name="Description2">
+            </mat-form-field >
+        </mat-expansion-panel>
+      </mat-accordion>
+</div>
+        <!-- <div class="row">
+            <mat-form-field class="example-chip-list">
+                <mat-chip-list #chipList aria-label="Fruit selection" name="technicalskill" [(ngModel)]="technicalskill">
+                  <mat-chip *ngFor="let fruit of fruits" [selectable]="selectable"
+                           [removable]="removable" (removed)="remove(fruit)">
+                    {{fruit}}
+                    <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                  </mat-chip>
+                  <input placeholder="Technical Skill..."
+                         [matChipInputFor]="chipList"
+                         [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                         [matChipInputAddOnBlur]="addOnBlur"
+                         (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+              </mat-form-field>
+        </div>  -->
+          <!-- <mat-form-field class="example-full-width">
+            <textarea matInput placeholder="Leave a comment"></textarea>
+          </mat-form-field> -->
+        </form>
+        
+<button [routerLink]="['/resume1']" (click)="savedata()">
+  Next
+</button>
+  </mat-card-content>
+</mat-card>

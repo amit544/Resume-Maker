@@ -1,0 +1,41 @@
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  grid: 600px / auto auto auto;
+  grid-gap: 10px;
+  background-color: #eef4f8;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+.example-card {
+  max-width: 1000px;
+  margin-left: 12%;
+  height: 100vh;
+}
+
+.example-header-image {
+  background-size: cover;
+  height: 120px;
+  width: 120px;
+}
+
+.col-md-1 {
+  margin-left: .5%;
+}
+
+.col-md-2 {
+  margin-right: 73%;
+}
+
+.col-md-4 {
+  margin-top: .8%;
+}
+/*# sourceMappingURL=resume1.component.css.map */
