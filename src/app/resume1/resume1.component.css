@@ -8,6 +8,10 @@
   margin-right: 4%;
 }
 
+#main1 {
+  margin-top: 3%;
+}
+
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -18,13 +22,27 @@
 .example-card {
   max-width: 1000px;
   margin-left: 12%;
-  height: 100vh;
+  height: auto;
 }
 
 .example-header-image {
   background-size: cover;
   height: 120px;
   width: 120px;
+}
+
+#header {
+  margin-left: 45%;
+  margin-top: -12%;
+}
+
+#header1 {
+  margin-top: -37%;
+  margin-left: 45%;
+}
+
+.row {
+  margin-left: 1.5%;
 }
 
 .col-md-1 {
@@ -37,5 +55,21 @@
 
 .col-md-4 {
   margin-top: .8%;
+}
+
+h4 {
+  margin-top: 3%;
+}
+
+li {
+  font-size: 130%;
+}
+
+ul {
+  margin-left: .5%;
+}
+
+#yop {
+  margin-top: 2%;
 }
 /*# sourceMappingURL=resume1.component.css.map */

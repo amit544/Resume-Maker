@@ -39,6 +39,8 @@ export class FormComponent implements OnInit {
   yearofcertificate='';
   Certificate1='';
   yearofcertificate1='';
+  Certificate2='';
+  yearofcertificate2='';
   hobbies1='';
   hobbies2='';
   hobbies3='';
@@ -54,7 +56,7 @@ export class FormComponent implements OnInit {
   mobileno=new FormControl('',Validators.required);
   getErrorMessage() {
     return this.email.hasError('required')?'You must enter a value' :
-          this.email.hasError('email')?'Not a valid email' :
+             this.email.hasError('email')?'Not a valid email' :
             '';
   }
   ErrorMessage() {
@@ -105,6 +107,8 @@ export class FormComponent implements OnInit {
       "yearofcertificate":this.yearofcertificate,
       "Certificate1":this.Certificate1,
       "yearofcertificate1":this.yearofcertificate1,
+      "Certificate2":this.Certificate2,
+      "yearofcertificate2":this.yearofcertificate2,
       "hobbies1":this.hobbies1,
       "hobbies2":this.hobbies2,
       "hobbies3":this.hobbies3,

@@ -1,3 +1,6 @@
+.example-full-width{
+ width:85%;
+}
 .header{
   text-align:center;
   font-size: 250%;
@@ -15,17 +18,19 @@ h1{
 .row{
   margin-left: 10%;
   margin-top: 2%;
+  width: 85%;
 }
 #header2{
   width: 100;
   max-width:auto;
+  margin-left: 2%;
 }
 .header1{
     width: 90%;
   min-width: 400px;
 }
 .example-chip-list {
-  width: 90%;
+  width: 88%;
   margin-left:1.3%;
 }
 .example-container > * {
@@ -41,10 +46,20 @@ h1{
   width: 94%;
 }
 .example{
-  width: 100%;
+  width:85%;
 }
 .example1{
-  margin-left: 30%;
+  margin-left:3%;
+}
+#hobbies3{
+  margin-left:-12%;
+}
+#button{
+  width: 100px;
+  border-radius: 10px 10px 10px 10px;
+  margin-top: 5%;
+  margin-left:87%;
+  margin-bottom: 2%;
 }
 @media only screen and (max-width: 951px) {
   .user {

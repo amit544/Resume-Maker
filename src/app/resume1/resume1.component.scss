@@ -6,7 +6,9 @@
     margin-left:4%;
     margin-right: 4%;
   }
-  
+  #main1{
+    margin-top:3%;
+  }
   .grid-container > div {
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
@@ -16,8 +18,8 @@
   .example-card {
     max-width: 1000px;
     margin-left:12%;
-    height:auto;
-    // background-image:linear-gradient(red 30% left,blue 50% right);
+    height:auto; 
+    //  background-image:linear-gradient(rgba(208, 221, 20, 0.781));
 
   }  
   .example-header-image {

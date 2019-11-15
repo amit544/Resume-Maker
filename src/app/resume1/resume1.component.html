@@ -6,25 +6,15 @@
   rel="stylesheet"
   href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
   integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-  crossorigin="anonymous"
-/>
-<!--{{data.data|json}}-->
-<!-- <div class="grid-container">-->
+  crossorigin="anonymous"/>
+  <button (click)="printfun()" class="btn btn-primary" id="print">Print</button>
 <mat-card class="example-card">
-  <!-- <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>
-        
-      </mat-card-title>
-      <mat-card-subtitle></mat-card-subtitle>
-    </mat-card-header> -->
-
   <mat-card-content>
     <div class="main">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-11">
           <div>
-            <h2>
+            <h2 id="main1">
               {{
                 data.data[0]?.name +
                   " " +
@@ -38,25 +28,25 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <span>
+          <span id="main1">
             <i class="fa fa-envelope" style="font-size:20px"></i>
-             <strong> {{ data.data[0]?.emailid }}</strong>
+             <strong > {{ data.data[0]?.emailid }}</strong>
           </span>
           <div>
-         <span>
+         <span id="main1">
             <i class="fa fa-linkedin-square" style="font-size:20px"></i
-            ><strong> {{ data.data[0]?.linkedin }}</strong>
+            ><strong >{{ data.data[0]?.linkedin }}</strong>
           </span>
         </div>
         <div>
-          <span>
+          <span id="main1" style="margin-bottom:5px;">
             <i class="fa fa-phone-square" style="font-size:20px"></i
-            ><strong> {{ data.data[0]?.mobile }}</strong>
+            ><strong > {{ data.data[0]?.mobile }}</strong>
           </span>
         </div>
-          <span>
+          <span id="main1" style="margin-bottom: 1%;">
             <i class="fa fa-globe" style="font-size:20px"></i
-            ><strong> {{ data.data[0]?.Country }}</strong>
+            ><strong > {{ data.data[0]?.Country }}</strong>
           </span>
         </div>
           <div class="col-md-7" id="header">
@@ -65,14 +55,15 @@
            <h6>{{data.data[0]?.yearofcertificate}}</h6>
            <strong>{{data.data[0]?.Certificate1}}</strong> 
            <h6>{{data.data[0]?.yearofcertificate1}}</h6>
-           
+           <strong>{{data.data[0]?.Certificate2}}</strong> 
+           <h6>{{data.data[0]?.yearofcertificate2}}</h6>
         </div>
       </div>
      
     </div>
     <div class="row">
          <div class="col-md-4">
-            <div><h4>SKILL</h4></div>
+            <div><i class="fa fa-medal"></i><h4>SKILL</h4></div>
             <div *ngIf="data.data[0]?.technicalskill" id="skill">
         <li *ngFor="let skill of data.data[0].technicalskill">
           {{ skill }}
@@ -106,7 +97,7 @@
           </span>
         </div> 
         <div class="col-md-8" id="header1">
-            <h4><i class="fa fa-basketball-ball"></i>HOBBIES</h4>
+            <h4><i class="fa fa-basketball-ball" ></i>HOBBIES</h4>
             
            <h6>{{data.data[0]?.hobbies1}}</h6>
             <h6>{{data.data[0]?.hobbies2}}</h6>
@@ -123,56 +114,4 @@
       <div class="col-md-6"></div>
   </mat-card-content>
 </mat-card>
-{{ data.data[0]?.emailid.value }}
-<h6>{{data.data[0]?.Post1}}</h6>
-<h6>{{data.data[0]?.Description1}}</h6>
-<div *ngIf="data.data[0]?.technicalskill">
-  <li *ngFor="let skill of data.data[0].technicalskill">
-    {{ skill }}
-  </li>
-</div>
-<button (click)="printfun()">Download Brochure</button>
-<!-- <mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{data.data[0]?.name+ ' ' + data.data[0]?.mname +' '+data.data[0]?.lname}}</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> 
-    <mat-card-content>
-        	 <mat-icon> email</mat-icon>{{data.data[0]?.emailid+''+data.data[0]?.linkedin+' '+data.data[0]?.Country+''+data.data[0]?.University+''}}
-    </mat-card-content>
-</mat-card>
-   {{data.data[0]?.emailid.value}}
-   <div *ngIf="data.data[0]?.technicalskill">
-      <li *ngFor="let skill of data.data[0].technicalskill">
-          {{skill}}
-        </li>
-   </div>
-  -->
-<div class="container">
-  <div class="card">
-    <div class="card-body">
-      <div class="row">
-        <div class="col">
-          <div>
-            <h1>
-              {{ name }}
-              <!-- name here -->
-            </h1>
-            <p>
-              {{ address }}
-              <br />
-              {{ email }}
-            </p>
-          </div>
-          <div>
-            <h1>Summary</h1>
-            <hr />
-            {{ summary }}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+

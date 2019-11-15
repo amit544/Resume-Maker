@@ -1,20 +1,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 <mat-toolbar color="primary"><h1 class="header" >Resume</h1>
   <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu" class="user">
-    <mat-icon>account_circle</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-     <button mat-menu-item>
-      <span>Login</span>
-    </button>
-    <button mat-menu-item>
-      <span>Logout</span>
-    </button>
   </mat-menu>
 </mat-toolbar>
 <mat-card>
   <mat-card-content>
-    <form class="example-form card w-75 mx-auto">
+    <form class="example-form card w-75 mx-auto" #form>
       <div style="text-align: center;padding-top: 10px;"><h3>Personal Details:</h3></div>
           <div class="row">
               <span class="col-md-4">
@@ -187,6 +180,18 @@
       <div class="row">
           <div class="col-md-8">
           <mat-form-field class="example">
+              <input matInput  maxlength="256" placeholder="Certificates"[(ngModel)]="Certificate2" name="Certificates2">
+            </mat-form-field>
+        </div>
+        <div class="col-md-4">
+            <mat-form-field class="example1">
+                <input matInput  maxlength="256" placeholder="Year of Certificates"[(ngModel)]="yearofcertificate2" name="yearofcertificate2">
+              </mat-form-field>
+          </div>
+    </div>
+      <div class="row">
+          <div class="col-md-8">
+          <mat-form-field class="example">
               <input matInput  maxlength="256" placeholder="Certificates"[(ngModel)]="Certificate1" name="Certificates1">
             </mat-form-field>
         </div>
@@ -196,7 +201,7 @@
               </mat-form-field>
           </div>
     </div>
-    <div class="row">
+    <div class="row" id="example2">
         <span class="col-md-4">
         <mat-form-field class="example-full-width">
          <input matInput placeholder="Hobbies1" [(ngModel)]="hobbies1" name="hobbies1">
@@ -208,7 +213,7 @@
       </mat-form-field>
     </span> 
     <div class="col-md-4">  
-      <mat-form-field class="example-full-width">
+      <mat-form-field class="example-full-width" id="hobbies3">
         <input matInput placeholder="Hobbies3" [(ngModel)]="hobbies3" name="hobbies3"> 
       </mat-form-field>
     </div>
@@ -261,6 +266,9 @@
         </mat-expansion-panel>
       </mat-accordion>
 </div>
+<button [routerLink]="['/resume1']" (click)="savedata()" class="btn btn-primary" id="button">
+  Next
+</button>
         <!-- <div class="row">
             <mat-form-field class="example-chip-list">
                 <mat-chip-list #chipList aria-label="Fruit selection" name="technicalskill" [(ngModel)]="technicalskill">
@@ -281,9 +289,6 @@
             <textarea matInput placeholder="Leave a comment"></textarea>
           </mat-form-field> -->
         </form>
-        
-<button [routerLink]="['/resume1']" (click)="savedata()">
-  Next
-</button>
+      
   </mat-card-content>
 </mat-card>
